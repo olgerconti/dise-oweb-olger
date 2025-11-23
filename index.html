@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mi Mundo Tech Solutions: Soluciones tecnológicas y soporte TI para impulsar tu negocio.">
+  <meta name="author" content="Mi Mundo Tech Solutions">
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+  <title>Inicio | Mi Mundo Tech Solutions</title>
+  <link rel="stylesheet" href="estilos.css">
+  <!-- Importamos FontAwesome para los iconos de WhatsApp -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <main>
+
+    <!-- ENCABEZADO -->
+    <header id="encabezado">
+      <div class="logo">
+        <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="45" fill="none" stroke="var(--color-acento)" stroke-width="5"/>
+          <path d="M50,5 A45,45 0 0,1 95,50 L95,60 A45,45 0 0,1 50,95 L40,95 A45,45 0 0,1 5,50 L5,40 A45,45 0 0,1 50,5 Z" fill="var(--color-acento)"/>
+          <circle cx="50" cy="50" r="20" fill="var(--color-primario)"/>
+        </svg>
+        <img src="img/logo.png" alt="Logo de Mi Mundo Tech">
+        <h1>Mi Mundo Tech Solutions</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html" class="activo">Inicio</a></li>
+          <li><a href="tienda.html">Tienda</a></li>
+          <li><a href="servicios.html">Servicios</a></li>
+          <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="contenido-principal">
+
+      <!-- HERO BANNER -->
+      <section class="hero-banner">
+        <div class="hero-contenido">
+          <h2>¿Sientes que tu PC se arrastra?</h2>
+          <p>
+            Es hora de un rescate. Con nuestra repotenciación, tu máquina pasará de tortuga a guepardo digital. El rendimiento superior está a solo un paso.
+          </p>
+          <a href="contacto.html" class="btn btn-hero">¡DILE ADIÓS A LA LENTITUD!</a>
+        </div>
+      </section>
+
+      <!-- SECCIÓN DE SERVICIOS PRINCIPALES -->
+      <section class="servicios">
+        <h2 class="servicios-header">Explora Nuestras Áreas Clave</h2>
+
+        <article class="card">
+          <img src="img/laptop.jpg" alt="Mantenimiento preventivo">
+          <h3>MANTENIMIENTO PREVENTIVO</h3>
+          <p>Planes periódicos para optimizar el rendimiento de PCs, laptops y servidores, prolongando su vida útil.</p>
+          <a href="servicios.html#mantenimiento" class="btn">Ver más</a>
+        </article>
+
+        <article class="card">
+          <img src="img/reparacion-pc.jpg" alt="Diagnóstico y reparación">
+          <h3>REPARACIÓN Y DIAGNÓSTICO</h3>
+          <p>Solución experta de fallas de hardware, software y problemas de sistema operativo.</p>
+          <a href="servicios.html#reparacion" class="btn">Ver más</a>
+        </article>
+
+        <article class="card">
+          <img src="img/cableado.jpg" alt="Cableado estructurado">
+          <h3>CABLEADO ESTRUCTURADO Y REDES</h3>
+          <p>Diseño e implementación profesional de infraestructura de cableado UTP/Fibra.</p>
+          <a href="servicios.html#cableado" class="btn">Ver más</a>
+        </article>
+      </section>
+
+      <!-- SECCIÓN: ATENCIÓN VÍA WHATSAPP (FLIP CARDS GIRATORIAS) -->
+      <section id="contacto-whatsapp" class="whatsapp-section">
+        <div class="whatsapp-header">
+            <i class="fab fa-whatsapp logo-ws"></i>
+            <h2>Atención al Instante vía WhatsApp</h2>
+            <p>Selecciona el área con la que deseas comunicarte y te atenderemos en tiempo real.</p>
+        </div>
+
+        <div class="grid-flip-cards">
+            
+            <!-- Tarjeta 1: Ventas -->
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <!-- Cara Frontal -->
+                    <div class="flip-card-front" style="background-image: url('img/aventas.png');">
+                        <div class="overlay-dark">
+                            <span class="ws-tag">WhatsApp</span>
+                            <h3>Ventas</h3>
+                        </div>
+                    </div>
+                    <!-- Cara Trasera -->
+                    <div class="flip-card-back">
+                        <h3>Equipo Comercial</h3>
+                        <p>Nuestro equipo comercial está preparado para apoyarte con cualquier duda sobre productos,
+                           tarifas o cualquier información vinculada a nuestras soluciones</p>
+                        <a href="https://wa.me/51900455718?text=Hola,%20quisiera%20cotizar%20un%20producto." target="_blank" class="btn-ws">
+                            <i class="fab fa-whatsapp"></i> Chatear ahora
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjeta 2: Soporte -->
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front" style="background-image: url('img/asoporte-tecnico.png');">
+                        <div class="overlay-dark">
+                            <span class="ws-tag">WhatsApp</span>
+                            <h3>Soporte Técnico</h3>
+                        </div>
+                    </div>
+                    <div class="flip-card-back">
+                        <h3>Mesa de Ayuda</h3>
+                        <p>¿Requieres ayuda técnica urgente? Nuestro equipo profesional en soluciones técnicas 
+                          está disponible para atender cualquier inconveniente o duda que presentes en ahora</p>
+                        <a href="https://wa.me/51900455718?text=Hola,%20necesito%20soporte%20técnico." target="_blank" class="btn-ws">
+                            <i class="fab fa-whatsapp"></i> Chatear ahora
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjeta 3: Logística -->
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front" style="background-image: url('img/alogistica.png');">
+                        <div class="overlay-dark">
+                            <span class="ws-tag">WhatsApp</span>
+                            <h3>Logística</h3>
+                        </div>
+                    </div>
+                    <div class="flip-card-back">
+                        <h3>Envíos y Entregas</h3>
+                        <p>Mejora tus operaciones logísticas con nuestro respaldo. Desde consultas sobre despachos hasta coordinación de entregas, 
+                          nuestro equipo de logística está listo para garantizar una administración eficiente.</p>
+                        <a href="https://wa.me/51900455718?text=Hola,%20consulta%20sobre%20envíos." target="_blank" class="btn-ws">
+                            <i class="fab fa-whatsapp"></i> Chatear ahora
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+      </section>
+
+    </section>
+
+    <!-- BOTÓN FLOTANTE (El que pediste) -->
+    <a class="wa-floating" href="https://wa.me/51900455718?text=Hola%20quiero%20atenci%C3%B3n" target="_blank" rel="noopener">
+        <i class="fab fa-whatsapp"></i> ¿Tiene alguna pregunta? Chatee con nosotros.
+    </a>
+
+    <!-- FOOTER -->
+    <footer id="footer-principal">
+      <div class="footer-contenido">
+        <img src="img/logo.png" alt="Logo pequeño de Mi Mundo Tech">
+        <div class="footer-texto">
+          <p>© 2025 Mi Mundo Tech Solutions | Soluciones Tecnológicas</p>
+          <p>📧 contacto@mimundotech.com</p>
+          <a href="#">Política de privacidad</a>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+  
+  <!-- Script General -->
+  <script src="main.js"></script>
+</body>
+</html>

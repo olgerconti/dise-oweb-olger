@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Catálogo de productos informáticos. Laptops, hardware y licencias de software.">
+  <meta name="author" content="Mi Mundo Tech Solutions">
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+  <title>Tienda | Mi Mundo Tech Solutions</title>
+  <link rel="stylesheet" href="estilos.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Overlay para el Carrito -->
+  <div id="overlay"></div>
+
+  <!-- MODAL DE PRODUCTO (Ventana Emergente) -->
+  <div id="modal-producto" class="modal oculto">
+      <div class="modal-contenido">
+          <button class="btn-cerrar-modal" id="cerrar-modal">&times;</button>
+          <div class="modal-grid">
+              <div class="modal-img">
+                  <img id="modal-img" src="" alt="Producto">
+              </div>
+              <div class="modal-info">
+                  <span class="modal-categoria" id="modal-cat">Categoría</span>
+                  <h2 id="modal-titulo">Nombre del Producto</h2>
+                  <p class="modal-precio" id="modal-precio">S/ 0.00</p>
+                  <div class="modal-detalles">
+                      <h3>Características Principales:</h3>
+                      <ul id="modal-lista-detalles">
+                          <!-- JS llenará esto -->
+                      </ul>
+                  </div>
+                  <div class="modal-acciones">
+                      <button id="btn-modal-agregar" class="btn-comprar">Agregar al Carrito</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <main>
+
+    <header id="encabezado">
+      <div class="logo">
+        <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="45" fill="none" stroke="var(--color-acento)" stroke-width="5"/>
+          <path d="M50,5 A45,45 0 0,1 95,50 L95,60 A45,45 0 0,1 50,95 L40,95 A45,45 0 0,1 5,50 L5,40 A45,45 0 0,1 50,5 Z" fill="var(--color-acento)"/>
+          <circle cx="50" cy="50" r="20" fill="var(--color-primario)"/>
+        </svg>
+        <img src="img/logo.png" alt="Logo de Mi Mundo Tech">
+        <h1>Mi Mundo Tech Solutions</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="tienda.html" class="activo" style="color: var(--color-acento);">Tienda</a></li>
+          <li><a href="servicios.html">Servicios</a></li>
+          <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+        
+        <button id="btn-abrir-carrito" class="btn-icono" style="margin-left: 15px;">
+            <i class="fas fa-shopping-cart"></i> <span id="contador-carrito">0</span>
+        </button>
+      </nav>
+    </header>
+
+    <section id="contenido-principal">
+
+      <div class="oferta-banner" id="mensaje-oferta">
+          ⚡ ¡OFERTA FLASH! Descuentos especiales terminan en <span id="cuenta-regresiva">120</span> segundos ⚡
+      </div>
+
+      <div class="tienda-layout">
+          
+          <!-- BARRA LATERAL DE FILTROS (MENÚ DE CATEGORÍAS) -->
+          <aside class="sidebar-filtros">
+              <div class="filtro-grupo">
+                  <h3><i class="fas fa-list"></i> Categorías</h3>
+                  <ul id="lista-categorias">
+                      <!-- Los botones llaman a la función filtrar() en JS -->
+                      <li><button class="btn-cat activo" onclick="filtrarProductos('todos', this)">Todo</button></li>
+                      <li><button class="btn-cat" onclick="filtrarProductos('computo', this)">Computadores y Laptops</button></li>
+                      <li><button class="btn-cat" onclick="filtrarProductos('componentes', this)">Componentes de Cómputo</button></li>
+                      <li><button class="btn-cat" onclick="filtrarProductos('celulares', this)">Celulares y Accesorios</button></li>
+                      <li><button class="btn-cat" onclick="filtrarProductos('software', this)">Software y Licencias</button></li>
+                  </ul>
+              </div>
+          </aside>
+
+          <!-- GRILLA DE PRODUCTOS -->
+          <section class="catalogo-container">
+              <div id="contenedor-productos" class="grilla-productos">
+                  <p style="text-align: center; width: 100%;">Cargando catálogo...</p>
+              </div>
+          </section>
+
+      </div>
+
+    </section>
+
+    <!-- CARRITO LATERAL -->
+    <aside id="carrito-lateral" class="carrito">
+        <div class="carrito-header">
+            <h3>Tu Carrito</h3>
+            <button id="btn-cerrar-carrito" class="btn-cerrar">&times;</button>
+        </div>
+        
+        <div id="carrito-items" class="carrito-body">
+            <p class="carrito-vacio">Tu carrito está vacío.</p>
+        </div>
+
+        <div class="carrito-footer">
+            <div class="resumen-fila">
+                <span>Subtotal:</span>
+                <span>S/ <span id="carrito-subtotal">0.00</span></span>
+            </div>
+            <div class="resumen-fila secundario">
+                <span>Envío:</span>
+                <span>S/ <span id="carrito-envio">0.00</span></span>
+            </div>
+            <div class="resumen-fila secundario">
+                <span>IGV (18%):</span>
+                <span>S/ <span id="carrito-impuestos">0.00</span></span>
+            </div>
+            <div class="resumen-total">
+                <span>TOTAL:</span>
+                <span>S/ <span id="carrito-total">0.00</span></span>
+            </div>
+            <button id="btn-finalizar" class="btn-comprar full-width">Pagar Ahora</button>
+        </div>
+    </aside>
+
+    <!-- BOTÓN FLOTANTE WHATSAPP -->
+    <a class="wa-floating" href="https://wa.me/51900455718?text=Hola%20quiero%20atenci%C3%B3n" target="_blank" rel="noopener" style="right: auto; left: 20px";>
+        <i class="fab fa-whatsapp"></i> ¿Preguntas? Chatea aquí.
+    </a>
+
+    <footer id="footer-principal">
+      <div class="footer-contenido">
+        <img src="img/logo.png" alt="Logo pequeño de Mi Mundo Tech">
+        <div class="footer-texto">
+          <p>© 2025 Mi Mundo Tech Solutions | Soluciones Tecnológicas</p>
+          <p>📧 contacto@mimundotech.com</p>
+          <a href="#">Política de privacidad</a>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <script src="main.js"></script>
+  <script src="tienda_logica.js"></script>
+
+</body>
+</html>

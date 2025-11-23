@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contáctanos para solicitar soporte técnico, cotizaciones o asesoría tecnológica.">
+  <meta name="author" content="Mi Mundo Tech Solutions">
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+  <title>Contacto | Mi Mundo Tech Solutions</title>
+  <link rel="stylesheet" href="estilos.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <main>
+
+    <header id="encabezado">
+      <div class="logo">
+        <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="45" fill="none" stroke="var(--color-acento)" stroke-width="5"/>
+          <path d="M50,5 A45,45 0 0,1 95,50 L95,60 A45,45 0 0,1 50,95 L40,95 A45,45 0 0,1 5,50 L5,40 A45,45 0 0,1 50,5 Z" fill="var(--color-acento)"/>
+          <circle cx="50" cy="50" r="20" fill="var(--color-primario)"/>
+        </svg>
+        <img src="img/logo.png" alt="Logo de Mi Mundo Tech">
+        <h1>Mi Mundo Tech Solutions</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="tienda.html">Tienda</a></li>
+          <li><a href="servicios.html">Servicios</a></li>
+          <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="contenido-principal">
+
+      <section class="intro">
+        <h2>Contáctanos y Empecemos</h2>
+        <p>
+          Estamos listos para escuchar tus necesidades. Rellena el formulario y te responderemos a la brevedad.
+        </p>
+        
+        <div class="form-container">
+          <form action="#" method="POST">
+              <label for="nombre">Nombre Completo:</label><br>
+              <input type="text" id="nombre" name="nombre" placeholder="Tu nombre o el de tu empresa" required><br>
+
+              <label for="telefono">Teléfono (para respuesta rápida):</label><br>
+              <input type="tel" id="telefono" name="telefono" placeholder="(Ej: +51 999 999 999)" required><br>
+
+              <label for="consulta">Tipo de Consulta:</label><br>
+              <select id="consulta" name="consulta" required>
+                  <option value="" disabled selected>Selecciona una opción</option>
+                  <option value="cotizacion">Solicitud de Cotización</option>
+                  <option value="soporte">Necesito Soporte Técnico Urgente</option>
+                  <option value="asesoria">Asesoría de Proyectos</option>
+                  <option value="general">Consulta General</option>
+              </select><br>
+
+              <label for="mensaje">Mensaje (Describe tu necesidad detalladamente):</label><br>
+              <textarea id="mensaje" name="mensaje" rows="5" placeholder="Ej: Necesito un plan de mantenimiento preventivo para 10 equipos." required></textarea><br>
+              
+              <button type="submit" class="btn btn-full-width">Enviar Solicitud</button>
+          </form>
+        </div>
+        
+        <div class="contact-info">
+          <p>📧 contacto@mimundotech.com</p>
+          <p>📱 +51 936638619</p>
+          <p>📍 Av. de la cultura 217, Oficina 101</p>
+        </div>
+      </section>
+
+    </section>
+
+    <a class="wa-floating" href="https://wa.me/51936638619?text=Hola%20quiero%20atenci%C3%B3n" target="_blank" rel="noopener">
+        <i class="fab fa-whatsapp"></i> ¿Tiene alguna pregunta? Chatee con nosotros.
+    </a>
+
+    <footer id="footer-principal">
+      <div class="footer-contenido">
+        <img src="img/logo.png" alt="Logo pequeño de Mi Mundo Tech">
+        <div class="footer-texto">
+          <p>© 2025 Mi Mundo Tech Solutions | Soluciones Tecnológicas</p>
+          <p>📧 contacto@mimundotech.com</p>
+          <a href="#">Política de privacidad</a>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+  <script src="main.js"></script>
+</body>
+</html>
