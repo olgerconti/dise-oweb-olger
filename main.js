@@ -1,8 +1,4 @@
-/*
-   SCRIPT GENERAL (main.js)
-   Funcionalidades compartidas para Index, Contacto, Servicios y Nosotros.
-   Cumple: Manejo de eventos (Scroll, Submit), Validación.
-*/
+
 
 // 1. EVENTO SCROLL: Cambiar estilo del menú al bajar
 window.addEventListener('scroll', () => {
@@ -38,7 +34,7 @@ if (formulario) {
     });
 }
 
-// 3. INTERACTIVIDAD EN SERVICIOS (Para servicios.html)
+// 3. INTERACTIVIDAD EN SERVICIOS
 // Resalta la fila de la tabla al pasar el mouse
 const filasTabla = document.querySelectorAll('.tabla-planes tbody tr');
 filasTabla.forEach(fila => {
@@ -51,9 +47,3 @@ filasTabla.forEach(fila => {
     });
 });
 
-// 4. SALUDO DE BIENVENIDA (Solo en Index)
-if (window.location.pathname.includes('index.html') || window.location.pathname.endsWith('/')) {
-    console.log("Bienvenido a Mi Mundo Tech Solutions");
-    // Podrías descomentar la siguiente línea si quieres un alert al entrar
-    // alert("¡Bienvenido a Mi Mundo Tech! Revisa nuestras ofertas.");
-}
